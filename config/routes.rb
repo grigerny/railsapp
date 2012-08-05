@@ -1,9 +1,13 @@
 Railsapp::Application.routes.draw do
+  
+  resources :comments
+
+  resources :users
+  
   resources :services
 
   resources :providers
 
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
