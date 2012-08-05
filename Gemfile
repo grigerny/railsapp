@@ -27,6 +27,15 @@ end
 
 gem 'jquery-rails'
 gem "heroku", "~> 2.30.2"
+gem 'devise'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'activerecord-reputation-system', :require => 'reputation_system'
+gem 'geocoder'
+gem 'koala'
+gem 'gmaps4rails'
+gem 'thin'
+gem 'taps'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
