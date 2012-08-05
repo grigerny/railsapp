@@ -1,4 +1,6 @@
 Railsapp::Application.routes.draw do
+  resources :services
+
   resources :providers
 
   resources :users
