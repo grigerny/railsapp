@@ -3,4 +3,16 @@ class Provider < ActiveRecord::Base
   belongs_to :service
   belongs_to :user
   has_many :comments
+  
+  geocoded_by :address 
+    after_validation :geocode
+    
+    def address
+       [street, city, state].compact.join(', ')
+     end
+     
+  acts_as_gmappable :check_process => false, :process_geocoding => false
+  def gmaps4rails_title
+        'You found me!'
+      end
 end
