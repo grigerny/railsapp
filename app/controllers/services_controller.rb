@@ -2,7 +2,7 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.all
+    @services = Service.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -69,15 +69,5 @@ class ServicesController < ApplicationController
     end
   end
 
-  # DELETE /services/1
-  # DELETE /services/1.json
-  def destroy
-    @service = Service.find(params[:id])
-    @service.destroy
-
-    respond_to do |format|
-      format.html { redirect_to services_url }
-      format.json { head :no_content }
-    end
-  end
+  
 end
