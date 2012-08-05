@@ -36,6 +36,8 @@ gem 'koala'
 gem 'gmaps4rails'
 gem 'thin'
 gem 'taps'
+gem "twitter-bootstrap-rails"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
