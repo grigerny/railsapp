@@ -9,8 +9,13 @@
 </head>
 <body>
 	
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+
+	
+	<% if flash[:alert] or flash[:notice] %>
+	<div id="notice" <% if flash[:alert] %>class="alert"<% end %>>
+	<%= flash[:alert] || flash[:notice] %>
+	</div>
+	<% end %>
 	
 	<% if user_signed_in? %>
 	  Logged in as <strong><%= current_user.email %></strong>.

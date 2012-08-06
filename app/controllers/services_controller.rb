@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
   # GET /services
   # GET /services.json
   def index
