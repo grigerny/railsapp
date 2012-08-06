@@ -1,14 +1,12 @@
 <% @title = @service.title %>
 <div class="search">
 <div class="row">
-<div class="span9">
 <form class="well form-search">
 <%= form_tag service_path, :method => :get do %>
   <h4>Search for nearby <%= @service.title.downcase %> services by City, State or Zip:</h4> 
     <%= text_field_tag :search, params[:search], :placeholder => "e.g. Brooklyn, NY or 11223", :style => "width:300px;" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
-</div>
 </div>
 </div>
 </form>
