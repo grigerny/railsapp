@@ -5,8 +5,10 @@ Railsapp::Application.routes.draw do
   resources :users
   
   resources :services
-
-  resources :providers
+  
+  resources :providers do
+    member { post :vote }
+  end
 
 
   # The priority is based upon order of creation:

@@ -14,11 +14,19 @@ class ServicesController < ApplicationController
   # GET /services/1.json
   def show
        @service = Service.find(params[:id])
+               @providers = @service.providers.find_with_reputation(:votes, :all, order: "votes desc")
+               @json = @service.providers.all.to_gmaps4rails
+
+               if params[:search].present?
+                   @providers = @service.providers.near(params[:search], 50, :order => :distance)
+                   @json = @service.providers.near(params[:search], 50, :order => :distance).to_gmaps4rails
+                   
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @service }
     end
   end
+end
 
 
   # GET /services/new

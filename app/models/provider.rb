@@ -15,4 +15,6 @@ class Provider < ActiveRecord::Base
   def gmaps4rails_title
         'You found me!'
       end
+  
+  has_reputation :votes, source: :user, aggregated_by: :sum
 end
