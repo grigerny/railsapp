@@ -1,16 +1,17 @@
 <% @title = @service.title %>
 <div class="search">
-<div class="row">
 <form class="well form-search">
+<h2><%= link_to 'ServiceCrunch', root_path %></h2>
 <%= form_tag service_path, :method => :get do %>
   <h4>Search for nearby <%= @service.title.downcase %> services by City, State or Zip:</h4> 
     <%= text_field_tag :search, params[:search], :placeholder => "e.g. Brooklyn, NY or 11223", :style => "width:300px;" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 </div>
-</div>
 </form>
+<center>
 <%= gmaps4rails(@json) %>
+</center>
 <br>
 
 <h2><center><%= @service.title %></h2></center>

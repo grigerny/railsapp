@@ -1,7 +1,7 @@
 <% @title = 'ServiceCrunch' %>
-
 <div class="search">
 <form class="well form-search">
+	<h2><%= link_to 'ServiceCrunch', root_path %></h2>
 	<h4>What type of service are you looking for?</h4>
  <%= form_tag services_path, :method => 'get' do %>
 	<%= text_field_tag :search, params[:search], :placeholder => "e.g. landscaping...", :style => "width:300px;" %>

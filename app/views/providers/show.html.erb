@@ -13,10 +13,9 @@
 <%= number_to_phone(@provider.phone)  %><br>
 <%= link_to 'Company Website', @provider.website %><br>
 Insured / licensed: <%= @provider.insured %>
-
 <div class="row">
 <div class="span9">
-<div class="offset9 offset5">
+<div class="offset9 offset3">
 <div class="googlemap">
 	<%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_adjust" => true, "auto_zoom" => false, "zoom" => 11}) %>
 	<%= yield :scripts %>
