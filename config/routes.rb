@@ -8,6 +8,7 @@ Railsapp::Application.routes.draw do
   
   resources :providers do
     member { post :vote }
+    resources :comments 
   end
 
 

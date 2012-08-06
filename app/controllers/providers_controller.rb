@@ -3,6 +3,7 @@ class ProvidersController < ApplicationController
   # GET /providers/1.json
   def show
     @provider = Provider.find(params[:id])
+    @json = Provider.find(params[:id]).to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,6 +37,13 @@ class ProvidersController < ApplicationController
         format.json { render json: @provider.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+      @provider = Provider.find(params[:id])
+      @provider.add_or_update_evaluation(:votes, value, current_user)
+      redirect_to :back, notice: "Thanks for voting!"
   end
 end
 
