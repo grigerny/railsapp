@@ -3,6 +3,8 @@ class Service < ActiveRecord::Base
   has_many :providers
 
   def self.search(search)
-    search.blank? ? [] : all(:conditions => ['title LIKE ?', "%#{search.strip}%"])
+    search.blank? ? [] : all(:conditions => ['title LIKE ?', "%#{search.downcase}%"])
     end
 end
+
+
