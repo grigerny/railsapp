@@ -1,22 +1,20 @@
 <% @title = 'ServiceCrunch' %>
 <div class="search">
 <form class="well form-search">
-	<h2><%= link_to 'ServiceCrunch', root_path %></h2>
-	<h4>What type of service are you looking for?</h4>
+	<b>Search:</b> 
  <%= form_tag services_path, :method => 'get' do %>
-	<%= text_field_tag :search, params[:search], :placeholder => "e.g. landscaping...", :style => "width:300px;" %>
-	<%= submit_tag "Search", :name => nil %>	
+	<%= text_field_tag :search, params[:search], :placeholder => "Landscaping...", :style => "width:80%;" %>
+	<%= submit_tag "Search", :name => nil %>
 <%end%>
 </div>
-
 
 <% @services.each do |service| %>  
     <p><%= link_to "#{service.title}", service %></p>
 <% end %>
 </form>
 
+
 <div class="row">
-<h2><center>Categories</center></h2>
 <div class="span6">
 <br>
 	
