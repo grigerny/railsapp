@@ -1,7 +1,7 @@
 <% @title = 'ServiceCrunch' %>
 <div class="search">
 <form class="well form-search">
-	<b>Search:</b> 
+	<b>Search:</b>
  <%= form_tag services_path, :method => 'get' do %>
 	<%= text_field_tag :search, params[:search], :placeholder => "Landscaping...", :style => "width:80%;" %>
 	<%= submit_tag "Search", :name => nil %>

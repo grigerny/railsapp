@@ -1,31 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <% @title = @provider.name %>
-<br>
-
-
-<%= link_to "Back to list of providers", service_path(@provider.service_id) %><br><br>
+<i class="icon-arrow-left">
+<%= link_to "Back", service_path(@provider.service_id) %>
+</i>
 <div>
+	
 
-<h4><%= @provider.name %></h4><br>
+<h2><%= @provider.name %></h2><br>
 <%= @provider.street %><br>
 <%= @provider.city %>,  <%= @provider.state %> <%= @provider.zip %><br>
 <%= number_to_phone(@provider.phone)  %><br>
 <%= link_to 'Company Website', @provider.website %><br>
 Insured / licensed: <%= @provider.insured %>
 <div class="row">
-<div class="span9">
-<div class="offset9 offset3">
+<div class="offset9 offset6">
 <div class="googlemap">
 	<%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_adjust" => true, "auto_zoom" => false, "zoom" => 11}) %>
 	<%= yield :scripts %>
 </div>
 </div>
 </div>
-</div>
-<br>
 
-<div class="topline"></div>
 <br><br>
 </div>
 
@@ -59,12 +55,10 @@ Insured / licensed: <%= @provider.insured %>
 
 
 <%#--------start of comments form section-------------------- %>
-
-<h4>What was your experience with <%= @provider.name %>?</h4>
 	
 		<%= form_for ([@provider, @provider.comments.build]) do |f| %>
 		  <div class="field">
-		<%= f.text_area :body, :placeholder => "Add a comment...", :rows => 5, :style => "width:700px;" %></br>
+		<%= f.text_area :body, :placeholder => "Add a review for this service...", :rows => 5, :style => "width:700px;" %></br>
 		  </div>
 		<%= f.submit 'Add Comment' %>
 		<% end %>
