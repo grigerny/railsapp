@@ -13,24 +13,37 @@
 <% end %>
 </form>
 
-
 <div class="row">
 <div class="span6">
 <br>
 	
 
-<u><h4>Construction Services </h4></u>
+<h4>Construction Services </h4>
 <% Service.where(:category => "construction").each do |service| %>
 <%= link_to service.title.capitalize, service %><br>
 <% end %>
 
 <br>
 
-<u><h4>Pet Services </h4></u>
+<h4>Pet Services </h4>
 <% Service.where(:category => "pet").each do |service| %>
 <%= link_to service.title.capitalize, service %><br>
 <% end %>
 <br><br>
 </div>
 </div>
+
+<div class="row">
+<div class="span4 offset8">
+	<div class="serviceindexsidebar">
+			<div class="topline"></div>
+		<h4><center>Service Requests</center></h4>
+	</div>
 </div>
+</div>
+	
+</div>
+	
+</div>
+</div>
+

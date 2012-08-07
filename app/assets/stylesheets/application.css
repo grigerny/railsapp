@@ -11,16 +11,20 @@
  *= require_self
  *= require_tree .
 */
+.serviceindexsidebar{
+		background-color: #F5F5F5;
+		height: 600px;
+		margin-top:-110px;
+		-moz-box-shadow: 0 0 5px 0px #888;
+		-webkit-box-shadow: 0 0 5px 0px#888;
+		box-shadow: 0 0 5px 0px #888;
+	}
 
-.logo {
-	color:#0088CC;
-	
-}
 
 .shadowborder {
--moz-box-shadow: 0 0 5px 5px #888;
--webkit-box-shadow: 0 0 5px 5px#888;
-box-shadow: 0 0 5px 5px #888;
+	-moz-box-shadow: 0 0 5px 0px #888;
+	-webkit-box-shadow: 0 0 5px 0px#888;
+	box-shadow: 0 0 5px 0px #888;
 }
 
 .input { 
