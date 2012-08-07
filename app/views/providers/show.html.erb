@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id)%>
+
 <% @title = @provider.name %>
-<i class="icon-arrow-left">
-<%= link_to "Back", service_path(@provider.service_id) %>
-</i>
 <div>
 </br>	
 	
@@ -28,8 +27,7 @@ Insured / licensed: <%= @provider.insured %>
 
 <%#--------start of comments iteration section-------------------- %>
 
-<center><h4> Reviews for <%= @provider.name %></h4></center>
-<br>
+
 
 
 <% @provider.comments.reverse.each do |comment| %>
