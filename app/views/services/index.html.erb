@@ -15,9 +15,9 @@
 
 <div class="row">
 <div class="span6">
-	<div style="font-size: 14px;">
-	  <i class="icon-bookmark	"></i> <b>Construction Services</b>
-	</div>
+	<div style="font-size: 13px;">
+	  <i class="icon-bookmark	"></i> <b>Construction</b> (<%= Service.where(:category => "construction").count%>)
+</div>
 <ol>	
 <div style="font-size: 12px;">
 <% Service.where(:category => "construction").each do |service| %>
@@ -28,7 +28,7 @@
 
 
 
-<div style="font-size: 14px;">
+<div style="font-size: 13px;">
   <i class="icon-bookmark"></i> <b>Pet Services</b>
 </div>
 
@@ -37,10 +37,31 @@
 <%= link_to service.title.capitalize, service %><br>
 <% end %>
 </div>
-
-
-
-<br><br>
+<br>
+<div style="font-size: 13px;">
+  <i class="icon-bookmark"></i> <b>Tutoring</b>
+</div>
+<br>
+<div style="font-size: 13px;">
+  <i class="icon-bookmark"></i> <b>Child Services</b>
+</div>
+<br>
+<div style="font-size: 13px;">
+  <i class="icon-bookmark"></i> <b>Technology</b>
+</div>
+<br>
+<div style="font-size: 13px;">
+  <i class="icon-bookmark"></i> <b>Planners	</b>
+</div>
+<br>
+<div style="font-size: 13px;">
+  <i class="icon-bookmark"></i> <b>Trainers</b>
+</div>
+<br>
+<div style="font-size: 13px;">
+  <i class="icon-bookmark"></i> <b>Fixers</b>
+</div>
+<br>
 
 </div>
 </div>
