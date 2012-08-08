@@ -30,6 +30,7 @@
 	<% if user_signed_in? %>
 	<i class="icon-user"></i>
 	  <strong><%= current_user.name %></strong>
+	<i class="icon-wrench"></i>
 	  <%= link_to 'Edit profile', edit_user_registration_path %> |
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 	<% else %>

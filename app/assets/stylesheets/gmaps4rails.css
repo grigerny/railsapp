@@ -10,7 +10,6 @@
 }
 
 .gmaps4rails_map {
-	position: relative;
  height: 250px;
  width: 400px;
 }

@@ -13,7 +13,7 @@ Insured / licensed: <%= @provider.insured %>
 <div class="row">
 <div class="offset9 offset6">
 <div class="googlemap">
-	<%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_adjust" => true, "auto_zoom" => false, "zoom" => 11}) %>
+	<%= gmaps("markers" => {"data" => @json}, "map_options" => {"zoom" => 11,"auto_adjust" => true, "auto_zoom" => false}) %>
 	<%= yield :scripts %>
 </div>
 </div>

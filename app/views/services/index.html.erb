@@ -15,18 +15,31 @@
 
 <div class="row">
 <div class="span6">
-
-<h4>Construction Services </h4>
+	<div style="font-size: 14px;">
+	  <i class="icon-bookmark	"></i> <b>Construction Services</b>
+	</div>
+<ol>	
+<div style="font-size: 12px;">
 <% Service.where(:category => "construction").each do |service| %>
 <%= link_to service.title.capitalize, service %><br>
 <% end %>
+</div>
+</ol>
 
-<br>
 
-<h4>Pet Services </h4>
+
+<div style="font-size: 14px;">
+  <i class="icon-bookmark"></i> <b>Pet Services</b>
+</div>
+
+<div style="font-size: 12px;">
 <% Service.where(:category => "pet").each do |service| %>
 <%= link_to service.title.capitalize, service %><br>
 <% end %>
+</div>
+
+
+
 <br><br>
 
 </div>
