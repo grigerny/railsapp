@@ -18,3 +18,7 @@ class Provider < ActiveRecord::Base
   
   has_reputation :votes, source: :user, aggregated_by: :sum
 end
+
+def self.search(search)
+  search.blank? ? [] : all(:conditions => ['title LIKE ?', "%#{search.downcase}%"])
+end

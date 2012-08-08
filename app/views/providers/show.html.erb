@@ -1,11 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id)%>
-
 <% @title = @provider.name %>
-<div>
-</br>	
-	
+<br>
+<%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id)%>
+<br><br>
 
 <h2><%= @provider.name %></h2><br>
 <%= @provider.street %><br>
@@ -13,6 +9,7 @@
 <%= number_to_phone(@provider.phone)  %><br>
 <%= link_to 'Company Website', @provider.website %><br>
 Insured / licensed: <%= @provider.insured %>
+
 <div class="row">
 <div class="offset9 offset6">
 <div class="googlemap">
@@ -21,15 +18,9 @@ Insured / licensed: <%= @provider.insured %>
 </div>
 </div>
 </div>
-
-<br><br>
-</div>
+<br>
 
 <%#--------start of comments iteration section-------------------- %>
-
-
-
-
 <% @provider.comments.reverse.each do |comment| %>
 <%= gravatar_for comment.user.email if comment.user %>
 
@@ -47,8 +38,7 @@ Insured / licensed: <%= @provider.insured %>
 </div>
 </div>
 <hr>
-<br><br><br>
-
+<br><br>
 <% end %>
 
 
@@ -56,8 +46,9 @@ Insured / licensed: <%= @provider.insured %>
 <%#--------start of comments form section-------------------- %>
 	
 		<%= form_for ([@provider, @provider.comments.build]) do |f| %>
-		  <div class="field">
-		<%= f.text_area :body, :placeholder => "Add a review for this service...", :rows => 5, :style => "width:700px;" %></br>
-		  </div>
-		<%= f.submit 'Add Comment' %>
+	
+		<%= f.text_area :body, :placeholder => "Add a review for this service...", :rows => 5, :style => "width:100%;" %>
+		  <div align="right">
+		<%= f.button :'Add Comment', :class => 'btn' %>	
+		</div>  
 		<% end %>
