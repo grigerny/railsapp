@@ -11,13 +11,12 @@
  *= require_self
  *= require_tree .
 */
-.serviceindexsidebar{
-		background-color: #F5F5F5;
+.serviceindexbody{
+		background-color: #FCFCFC;
 		height: 600px;
-		margin-top:-110px;
-		-moz-box-shadow: 0 0 5px 0px #888;
-		-webkit-box-shadow: 0 0 5px 0px#888;
-		box-shadow: 0 0 5px 0px #888;
+		-moz-box-shadow: 0 0 4px 1px #888;
+		-webkit-box-shadow: 0 0 4px 1px#888;
+		box-shadow: 0 0 4px 1px #888;
 	}
 
 
