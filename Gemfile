@@ -37,6 +37,7 @@ gem 'gmaps4rails'
 gem 'thin'
 gem 'taps'
 gem "twitter-bootstrap-rails"
+gem 'font-awesome-rails'
 
 
 # To use ActiveModel has_secure_password

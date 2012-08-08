@@ -11,6 +11,8 @@
  *= require_self
  *= require_tree .
 */
+*= require 'font-awesome'
+
 .serviceindexbody{
 		background-color: #FCFCFC;
 		height: 600px;
