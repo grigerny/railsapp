@@ -8,43 +8,29 @@
 <% end %>
 </div>
 </form>
-<center>
-
-
-</center>
-<br>
-
-<h2><center><%= @service.title.capitalize %></h2></center>
-<br>
-<center><%= gmaps4rails(@json) %></center>
-
-<ol>
+<div class="row">
+	<div class="span6">
 <% if !@providers.empty? %>
 <% @providers.each do |provider| %>
+<div class="providers">
+	<ol>
 
-<li>
-<h4><%= link_to provider.name, provider_path(provider) %></h4>
-<%= provider.street %> <%= provider.city%> <%= provider.state%> <%= provider.zip%> <%= number_to_phone(provider.phone) %> <%= link_to 'website', provider.website  %>
-</li>
+	<li>
+	<%= link_to provider.name, provider_path(provider) %>	
+	<%= link_to '<i class="icon-thumbs-up"></i>'.html_safe, vote_provider_path(provider, type: "up"), method: "post" %>
+	| <%= link_to '<i class="icon-thumbs-down"></i>'.html_safe, vote_provider_path(provider, type: "down"), method: "post" %> 
+	- <%= pluralize provider.reputation_value_for(:votes).to_i, "referral" %>
+</div>	
 
-<div class="vote">
-<div align="right">
-	<%= pluralize provider.reputation_value_for(:votes).to_i, "point" %>
-<%= link_to '<i class="icon-thumbs-up"></i>'.html_safe, vote_provider_path(provider, type: "up"), method: "post" %>
-| <%= link_to '<i class="icon-thumbs-down"></i>'.html_safe, vote_provider_path(provider, type: "down"), method: "post" %>
-
-
-</div>
-</div>
-
-<hr>
 
 <% end %>
-
 <%= yield :scripts %>
-<%= stylesheet_link_tag "your css" %>
-
 <% else %>
 Sorry there were no providers found near the address you specified.
 <%end%>
+</div>
 </ol>
+</div>
+</div>
+
+
