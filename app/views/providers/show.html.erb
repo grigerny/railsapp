@@ -3,12 +3,13 @@
 <%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id)%>
 <br><br>
 
-<h2><%= @provider.name %></h2><br>
+<h2><%= link_to '@' + @provider.user.name + "'s", user_path(@provider.user_id)%><br><%= @provider.name %></h2><br>
 <%= @provider.street %><br>
 <%= @provider.city %>,  <%= @provider.state %> <%= @provider.zip %><br>
 <%= number_to_phone(@provider.phone)  %><br>
 <%= link_to 'Company Website', @provider.website %><br>
 Insured / licensed: <%= @provider.insured %>
+
 
 <div class="row">
 <div class="offset9 offset6">

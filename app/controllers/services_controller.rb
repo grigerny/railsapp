@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
   # GET /services.json
   def index
     @services = Service.search(params[:search])
+    @providers = Provider.all
 
     respond_to do |format|
       format.html # index.html.erb

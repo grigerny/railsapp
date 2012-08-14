@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name
   has_many :comments, :dependent => :destroy
+  has_many :providers
   
   validates_presence_of :name
 end
