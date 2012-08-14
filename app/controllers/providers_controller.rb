@@ -27,7 +27,7 @@ class ProvidersController < ApplicationController
   # POST /providers.json
   def create
     @provider = Provider.new(params[:provider])
-    @provider.user = current_user
+    @provider.user_id = current_user.id
 
     respond_to do |format|
       if @provider.save
