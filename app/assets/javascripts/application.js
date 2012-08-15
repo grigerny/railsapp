@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+$('#clickme').click(function() {
+  $('#book').fadeOut('slow', function() {
+    // Animation complete.
+  });
+});

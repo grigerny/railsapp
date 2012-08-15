@@ -7,17 +7,19 @@
 	<%= submit_tag "Search", :name => nil %>
 <%end%>
 </div>
-<%= link_to 'New Provider', new_provider_path %>
-
-
-<center><b>
-
-	<% @providers.last(10).reverse.each do |provider| %>
-</b> <b><%= provider.user.name %></b> has just just added <b><%= provider.name %></b> to ServiceCrunch</center>
+<div class="span6 offset3">
+<div class="feed">
+<center><% @providers.last(10).reverse.each do |provider| %>
+	<b><%= link_to provider.user.name, user_path(provider.user_id) %></b> 
+	added 
+	<b><%= link_to provider.name, provider_path(provider) %></b> 
+	to 
+	<b><%= link_to provider.service.title, provider.service %></b>
+	<br>
 <% end %>
-<br><br>
-
-
+</center>
+</div>
+</div>
 
 <% @services.each do |service| %>  
     <p><%= link_to "#{service.title}", service %></p>

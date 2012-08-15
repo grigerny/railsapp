@@ -1,21 +1,23 @@
-<h2>Sign up</h2>
+<br>	
+	<center><h2>Start a service or find a service near you.</h2></center>
+<div class="signin">
+		<div class="well">
+<h2>Sign Up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name, 'Username' %>
-  <%= f.text_field :name %></div>
+  <div><%= f.text_field :name, :placeholder => "Username" %></div>
 
-  <div><%= f.label :email %>
-  <%= f.email_field :email %></div>
+  <div><%= f.email_field :email, :placeholder => "Email" %></div>
 
-  <div><%= f.label :password %>
-  <%= f.password_field :password %></div>
+  <div><%= f.password_field :password, :placeholder => "Password" %></div>
 
-  <div><%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %></div>
+  <div><%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+		</div>
+</div>

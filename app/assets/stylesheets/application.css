@@ -91,3 +91,14 @@
 .providers:hover {
     background-color: #F5F5F5;
 }
+
+.signin {
+	background-color: #ffffff;
+	position:absolute;
+	top:20%;
+	left:35%;
+}
+.feed{
+	background-color: #ffffff;
+	border: 1px solid #999999;	
+}
