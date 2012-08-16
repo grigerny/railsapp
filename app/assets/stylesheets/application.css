@@ -13,15 +13,6 @@
 */
 
 
-.serviceindexbody{
-		background-color: #FCFCFC;
-		height: 600px;
-		-moz-box-shadow: 0 0 4px 1px #888;
-		-webkit-box-shadow: 0 0 4px 1px#888;
-		box-shadow: 0 0 4px 1px #888;
-	}
-
-
 .shadowborder {
 	-moz-box-shadow: 0 0 5px 0px #888;
 	-webkit-box-shadow: 0 0 5px 0px#888;
@@ -31,12 +22,6 @@
 .input { 
 	width: 200px
 }
-
-.topline{
-	height: 3px;
-	background-color:#0088CC;
-}
-
 
 .vote{
 	margin-top: -20px;
@@ -101,4 +86,39 @@
 .feed{
 	background-color: #ffffff;
 	border: 1px solid #999999;	
+}
+.logo{
+	display:inline;
+	padding:20px;
+	font-family:enriqueta-bold;
+	font-size:46px;
+}
+
+.navmenu{
+	font-family:open sans;
+	display:inline;
+	background-color:#eee;
+	margin:1;
+	padding:.5em;
+	zoom: 1;
+}
+
+.mainbody{
+	position:absolute;
+	height:100%;
+	background-color:#77BAE5;
+	color:#ffffff;
+}
+
+.footer {
+	clear:both;
+	bottom:0px;
+	position: fixed;
+	height:60px;
+	width: 100%;
+	overflow:auto;
+	background-color:#000000;
+	-moz-box-shadow:0px 0px 3px #000000;
+	-webkit-box-shadow:0px 0px 3px #000000;
+	box-shadow:0px 0px 3px #000000;
 }

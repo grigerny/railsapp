@@ -17,9 +17,10 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	
-	<div class="container">
-		<h2><center>ServiceCrunch</center></h2>
+		<div class="logo">
+		ServiceCrunch		
 		
+		<ul class="navmenu">	
 	<% if flash[:alert] or flash[:notice] %>
 	<div id="notice" <% if flash[:alert] %>class="alert"<% end %>>
 	<%= flash[:alert] || flash[:notice] %>
@@ -37,19 +38,33 @@
 	  <%= link_to "Sign up", new_user_registration_path %> |
 	  <%= link_to "Login", new_user_session_path %>
 	<% end %>
-&nbsp
-	<div class="fb-like" data-href="http://www.servicecrunch.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
-<%= link_to 'New Provider', new_provider_path %>
-	<div class="topline"></div>	
-
-<%= yield %>
-	<div>
+		</div>
+		
+	<div class="fb-like" data-href="http://www.servicecrunch.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana">
 	</div>
-
-
-
-<div class="bottom">
-</div>
-
-</body>
+<%= link_to 'New Provider', new_provider_path %>
+		</ul>
+		<br><br>
+		
+		<div class="mainbody">
+<%= yield %>
+		</div>
+		<div class="footer">
+			<ul>
+					<li>Item X</li>
+					<li>Item X</li>
+					<li>Item X</li>
+			</ul>
+			<ul>
+					<li>Item X</li>
+					<li>Item X</li>
+					<li>Item X</li>
+			</ul>
+			<ul>
+					<li>Item X</li>
+					<li>Item X</li>
+					<li>Item X</li>
+			</ul>
+		</div>
+</body>	
 </html>
