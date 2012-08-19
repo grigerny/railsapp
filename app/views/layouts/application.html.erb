@@ -8,6 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+	<% if flash[:alert] or flash[:notice] %>
+	<div id="notice" <% if flash[:alert] %>class="alert"<% end %>>
+	<%= flash[:alert] || flash[:notice] %>
+	</div>
+	<% end %>
+	
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -15,41 +21,31 @@
 	  js = d.createElement(s); js.id = id;
 	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=140012242803646";
 	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-	
-		<div class="logo">
-		ServiceCrunch		
-		
-		<ul class="navmenu">	
-	<% if flash[:alert] or flash[:notice] %>
-	<div id="notice" <% if flash[:alert] %>class="alert"<% end %>>
-	<%= flash[:alert] || flash[:notice] %>
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<div class="logo">
+	ServiceCrunch	
 	</div>
-	<% end %>
 	
-	<%= link_to 'Home', root_path %> |
+<ul class="nav-hor">	
+	<li><%= link_to 'HOME', root_path %></li>
 	<% if user_signed_in? %>
-	<i class="icon-user"></i>
-	  <strong><%= current_user.name %></strong>
-	<i class="icon-wrench"></i>
-	  <%= link_to 'Edit profile', edit_user_registration_path %> |
-	  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	  <li><i class="icon-user"></i><%= link_to current_user.name.upcase, edit_user_registration_path %></li>
+	  <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
 	<% else %>
-	  <%= link_to "Sign up", new_user_registration_path %> |
-	  <%= link_to "Login", new_user_session_path %>
+	 	<li><%= link_to "SIGN UP", new_user_registration_path %></li>
+	  <li><%= link_to "LOGIN", new_user_session_path %></li>
 	<% end %>
-		</div>
-		
-	<div class="fb-like" data-href="http://www.servicecrunch.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana">
-	</div>
-<%= link_to 'New Provider', new_provider_path %>
-		</ul>
-		<br><br>
-		
+	<li><%= link_to 'NEW PROVIDER', new_provider_path %></li>
+
+</ul>
 		<div class="mainbody">
 <%= yield %>
 		</div>
 		<div class="footer">
+			<div class="fb-like" data-href="http://www.servicecrunch.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana">
+			</div>
 			<ul>
 					<li>Item X</li>
 					<li>Item X</li>

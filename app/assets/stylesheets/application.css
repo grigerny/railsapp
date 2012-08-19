@@ -41,9 +41,6 @@
 }
 
 .googlemap{
-	padding: 0px;
-	margin-left: -70px;
-	margin-top: -160px;
 }
 
 .errormsg{
@@ -87,29 +84,75 @@
 	background-color: #ffffff;
 	border: 1px solid #999999;	
 }
+
 .logo{
 	display:inline;
+	float:left;
 	padding:20px;
 	font-family:enriqueta-bold;
 	font-size:46px;
 }
 
-.navmenu{
-	font-family:open sans;
-	display:inline;
-	background-color:#eee;
-	margin:1;
-	padding:.5em;
-	zoom: 1;
+.nav-hor {
+display:inline;
+padding: 25px;
+float: left;
+width: auto;
+}
+
+.nav-hor ul {
+list-style-type: none; 
+margin: 0; 
+padding: 0;
+} 
+
+.nav-hor li { 
+display:inline; 
+padding:0;
+margin: 0px;
+} 
+
+.nav-hor a:link, 
+.nav-hor a:visited,
+.nav-hor a:hover {
+font-family:opensans;
+font-size:14px;
+text-decoration:none;
+font-weight: bold;
+padding: 5px 7px 5px 7px;
+margin-right: 20px;
+}
+
+.nav-hor a:link, 
+.nav-hor a:visited {
+color:#000000;
+background-color:#FFFFFF;
+}
+
+.nav-hor a:hover {
+color:#ffffff;
+background-color:#000000;
+}
+
+.nav-hor a#current { 
+color:#29c3d6;
+background-color:#08565e;
 }
 
 .mainbody{
-	position:absolute;
-	height:100%;
+	float:left;
+	height:800px;
 	background-color:#77BAE5;
-	color:#ffffff;
+	color:#000000;
 }
 
+.mainright{
+	float:right;
+	width:500px;
+	margin-top:-20px;
+	height:700px;
+	background-color:#B3FFD8;
+}
 .footer {
 	clear:both;
 	bottom:0px;
