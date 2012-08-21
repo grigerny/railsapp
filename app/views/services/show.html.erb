@@ -1,25 +1,36 @@
 <% @title = @service.title %>
 <div class="search">
-<form class="well form-search">
-	<b>Search:</b> 
-<%= form_tag service_path, :method => :get do %>
-    <%= text_field_tag :search, params[:search], :placeholder => "City, State or Zip Code...", :style => "width:80%;"  %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+		<form class="well form-search">
+			<b>Search:</b> 
+				<%= form_tag service_path, :method => :get do %>
+    			<%= text_field_tag :search, params[:search], :placeholder => "City, State or Zip Code...", :style => "width:80%;"  %>
+    			<%= submit_tag "Search", :name => nil %>
+		</form>
+	<% end %>
 </div>
-</form>
-<div class="row">
-	<div class="span6">
+
+
+
 <% if !@providers.empty? %>
 <% @providers.each do |provider| %>
+<div class="span8">
 <div class="providers">
 	<ol>
-
 	<li>
-	[<%= link_to provider.user.name, user_path(provider.user_id) %>] <%= link_to provider.name, provider_path(provider) %>
+	<b><%= link_to provider.user.name, user_path(provider.user_id) %></b><br>
+	<%= gravatar_for provider.user.email %>
+		<b><%= link_to provider.name, provider_path(provider) %></b>
 	<%= link_to '<i class="icon-thumbs-up"></i>'.html_safe, vote_provider_path(provider, type: "up"), method: "post" %>
 	<%= pluralize provider.reputation_value_for(:votes).to_i, "like" %>
-</div>	
+	<br><br>
+	Recent Comment: "<%=provider.comments.last.body%>" 
+	<div align="right">
+	added <%= time_ago_in_words(provider.created_at) %> ago
+	</div>
+	</li>
+    </ol>
+</div>
+</div>
 
 
 <% end %>
@@ -27,8 +38,22 @@
 <% else %>
 Sorry there were no providers found near the address you specified.
 <%end%>
+
+
+<div class="span4">
+<div class="mainright2">
+	testing
+	</div>
 </div>
-</ol>
-</div>
-</div>
+	
+
+
+
+
+
+
+
+
+
+
 

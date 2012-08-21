@@ -1,13 +1,14 @@
 <% @title = 'ServiceCrunch' %>
-	<div class="search">
-<form class="well form-search">
-	<b>Search:</b>
- <%= form_tag services_path, :method => 'get' do %>
-	<%= text_field_tag :search, params[:search], :placeholder => "Landscaping...", :style => "width:80%;" %>
-	<%= submit_tag "Search", :name => nil %>
-</form>
-<%end%>
+<div class="search">
+		<form class="well form-search">
+			<b>Search:</b>
+ 				<%= form_tag services_path, :method => :get do %>
+				<%= text_field_tag :search, params[:search], :placeholder => "Landscaping...", :style => "width:80%;" %>
+				<%= submit_tag "Search", :name => nil %>
+		</form>
+	<% end %>
 </div>
+
 
 	<div class="span12">
 <% @services.each do |service| %>  
@@ -15,7 +16,7 @@
 <% end %>
     </div>
 
-	<div class="span6">
+	<div class="span8">
 	<div style="font-size: 13px;">
 	  <i class="icon-bookmark	"></i> <b>Construction</b> (<%= Service.where(:category => "construction").count%>)
 	</div>
@@ -63,15 +64,22 @@
 
     </div>
 
+	<div class="span4">
 	<div class="mainright">
+			<div class="timeago">
+				<center>ServiceCrunch Dashboard</center>
 				<center>
 	<% @providers.last(10).reverse.each do |provider| %>
 		<b><%= link_to provider.user.name, user_path(provider.user_id) %></b> 
 		added 
 		<b><%= link_to provider.name, provider_path(provider) %></b> 
-		to 
-		<b><%= link_to provider.service.title, provider.service %></b>
+		(<%= time_ago_in_words(provider.service.created_at) %> ago)
 		<br>
 	<% end %>
-				</center>		
+
+	
+
+				</center>
+			</div>
+		</div>
 	</div>

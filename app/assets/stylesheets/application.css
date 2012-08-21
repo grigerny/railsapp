@@ -55,15 +55,28 @@
 	-webkit-box-shadow: 0 0 5px#888;
 	box-shadow: 0 0 5px #888;
 }
-
 .providerlist{
-	background-color:#D3F0F6;;
+	background-color:#D3F0F6;
 	height: 100%;
 	-moz-box-shadow: inset 0 0 5px #888;
 	-webkit-box-shadow: inset 0 0 5px#888;
 	box-shadow: inset 0 0 5px #888;
 }
+
+.mainright2{
+	margin-top:-180px;
+	height:400px;
+	background-color: #F7FFD7;
+	border: 5px solid #000000;
+	-moz-box-shadow: inset 1px 1px 9px 1px #000000;
+	-webkit-box-shadow: inset 1px 1px 9px 1px #000000;
+	box-shadow: inset 1px 1px 9px 1px #000000;
+	/*Inner elements should not cover inner shadows*/
+	/*IE 7 AND 8 DO NOT SUPPORT INSET SHADOWS*/
+}
+
 .providers{
+	margin-top:1px;
 	background-color:#ffffff;
 	padding:10px;
 	font-size:16px;
@@ -139,25 +152,38 @@ color:#29c3d6;
 background-color:#08565e;
 }
 
+.topbar{
+}
+
+.timeago{
+	display:inline;
+	font-size:10px;
+	color:#7F7F7F;
+}
+
 .mainbody{
 	float:left;
-	height:800px;
+	height:700px;
 	background-color:#77BAE5;
 	color:#000000;
 }
 
 .mainright{
-	float:right;
-	width:500px;
-	margin-top:-20px;
-	height:700px;
-	background-color:#B3FFD8;
+	height:400px;
+	background-color: #F7FFD7;
+	border: 5px solid #000000;
+	-moz-box-shadow: inset 1px 1px 9px 1px #000000;
+	-webkit-box-shadow: inset 1px 1px 9px 1px #000000;
+	box-shadow: inset 1px 1px 9px 1px #000000;
+	/*Inner elements should not cover inner shadows*/
+	/*IE 7 AND 8 DO NOT SUPPORT INSET SHADOWS*/
 }
+
 .footer {
 	clear:both;
 	bottom:0px;
-	position: fixed;
-	height:60px;
+	position:fixed;
+	height:70px;
 	width: 100%;
 	overflow:auto;
 	background-color:#000000;

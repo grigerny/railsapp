@@ -5,7 +5,8 @@ class ServicesController < ApplicationController
   def index
     @services = Service.search(params[:search])
     @providers = Provider.all
-
+    @comments = Comment.all
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @services }
