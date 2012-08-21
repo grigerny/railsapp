@@ -42,7 +42,17 @@ Sorry there were no providers found near the address you specified.
 
 <div class="span4">
 <div class="mainright2">
-	testing
+	<div class="timeago">
+	<center>ServiceCrunch Dashboard</center>
+	<center>
+<% @providers.last(10).reverse.each do |provider| %>
+<b><%= link_to provider.user.name, user_path(provider.user_id) %></b> 
+added 
+<b><%= link_to provider.name, provider_path(provider) %></b> 
+(<%= time_ago_in_words(provider.service.created_at) %> ago)
+<br>
+<% end %>
+	</div>
 	</div>
 </div>
 	

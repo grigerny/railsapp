@@ -64,7 +64,9 @@
 }
 
 .mainright2{
+	position:fixed;
 	margin-top:-180px;
+	width:325px;
 	height:400px;
 	background-color: #F7FFD7;
 	border: 5px solid #000000;
@@ -169,6 +171,8 @@ background-color:#08565e;
 }
 
 .mainright{
+	position:fixed;
+	width:325px;
 	height:400px;
 	background-color: #F7FFD7;
 	border: 5px solid #000000;
