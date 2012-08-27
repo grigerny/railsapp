@@ -1,21 +1,19 @@
 <% @title = @provider.name %>
 <div class="span12">
-		
-				
-				
-					<div class="providershownav2">
-						<div class="row">
-						<div class="backbutton">	
-							<%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id) %>
-						</div>
 						
-						<div class="hirebutton">
-							Get quote
-						</div>	
-						</div>
-					</div>
+<div class="providershownav2">
+	<div class="row">
+		<div class="backbutton">	
+			<%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id) %>
+		</div>
+						
+		<div class="hirebutton">
+			Get quote
+		</div>	
+	</div>
+</div>
 					
-			<div class="container">
+<div class="container">
 				<div class="providershow2">	
 							<div class="row">
 
@@ -62,7 +60,7 @@
 					
 				</div>
 	  	        </div>
-			</div>
+</div>
 
 
 <div class="container">
@@ -87,16 +85,18 @@
 		
 </div>
 
-<div class="span12">
+
 		
 <%#--------start of comments iteration section-------------------- %>
+<div class="container">
+	<div class="row">
 		<% @provider.comments.reverse.each do |comment| %>
 		<%= gravatar_for comment.user.email if comment.user %>
 		<b>
 		<%= link_to comment.user.name, comment.user if comment.user %>:
 		</b>
 		<%= comment.body %>
-		<br>
+		<br><br>
 
 <div class="timeago">
 	<div class="right">
@@ -121,8 +121,9 @@
 	</div>			
 </div>	
 
-</div>	
-			
+	</div>
+</div>
+	
 
 </div>
 		

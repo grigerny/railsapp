@@ -1,6 +1,6 @@
 <div class="span12">
 <div class="row">
-<% @title = @service.title %>
+<% @title = @service.title.capitalize %>
 <div class="search">
 		<form class="well form-search">
 			<b>Search:</b> 
@@ -15,7 +15,7 @@
 <% if !@providers.empty? %>
 <% @providers.each do |provider| %>
 <div class="span8 offset2">	
-	<div><%= @service.title %></div>	
+	<div><%= @service.title.capitalize %></div>	
 <div class="providers">
 	<%= gravatar_for provider.user.email%> 
 	<div class="linktoprovider">
