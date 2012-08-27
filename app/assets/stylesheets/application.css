@@ -19,14 +19,35 @@
 	box-shadow: 0 0 5px 0px #888;
 }
 
+.servicesshow2 {
+	font-family:QuicksandBook-Regular;
+	background-color:#F7F4F5;
+	padding-top:20px;
+	padding-left:20px;
+	padding-bottom:20px;
+	font-size:12px;
+}
+
 .input { 
 	width: 200px
 }
 
-.vote{
-	margin-top: -20px;
+.nosearch {
+	height:1000px;
 }
 
+.searchresults{
+	background-color:#77BAE5;
+}
+
+.vote {
+	background-color:#5F9FDC;
+	display:inline;
+	float:right;
+	margin-top:30px;
+	padding-right:5px;
+	border: 3px solid #5F9FDC;	
+}
 .comment-ago{
 	margin-top: -20px;
 }
@@ -37,10 +58,154 @@
 
 .socialsignin{
 	margin-left:340px;
-	margin-top: -100px;
+	margin-top:-100px;
+}
+
+.providershowinfo{
+	padding:40px;
+	float:left;
+	display:inline;
+	width:100%;
+	height:140px;
+	background-color:#5E9FDC;
+	font-family:QuicksandBook-Regular;
+	font-size:20px;
+}
+
+.providershowinfoaddress{
+	padding:40px;
+	float:left;
+	display:inline;
+	background-color:#fff;
+	width:100%;
+	height:140px;
+}
+
+.providershowinfoaddressname{
+	font-family:QuicksandBook-Regular;
+	font-size:20px;
+}
+.providershowinfostatstitle{
+	font-family:QuicksandBook-Regular;
+	font-size:20px;
+}
+
+.providershowinfostats{
+	padding:40px;
+	float:right;
+	display:inline;
+	background-color:#fff;
+	width:100%;
+	height:140px;
+}
+
+.providershowinfosummarytitle{
+	padding:20px;
+	font-family:QuicksandBook-Regular;
+	font-size:20px;
+}
+
+.providershowinfosummary{
+	float:left;
+	font-family:QuicksandBook-Regular;
+	font-size:14px;
+}
+
+
+.providershowmain {
+	background-color:#E1E6F1;
+	height:600px;
+	margin-top:20px;
+	border: 1px solid transparent;
+	-moz-box-shadow: 0px 0px 2px #000000;
+	-webkit-box-shadow: 0px 0px 2px #000000;
+	box-shadow: 0px 0px 3px #000000;
+}
+.providershownav2{
+	font-family:QuicksandBook-Regular;
+	font-size:14px;
+	height:30px;
+	padding:20px;
+			
+}
+
+.backbutton{
+	float:left;
+	font-color:#fff	;
+}
+
+.backbutton{
+	color:#fff;
+	
+}
+.hirebutton{
+	float:right;
+}
+
+.button1{
+		width: 303px;
+			height: 91px;
+			background-color: #d9d9d9;
+			-webkit-box-shadow: 0 0 3px #181816;
+			-moz-box-shadow: 0 0 3px #181816;
+			box-shadow: 0 0 3px #181816;
+}
+.providershow2{
+	font-family:QuicksandBook-Regular;
+	font-size:14px;
+	height:100%;
+}
+
+
+.providers2 {
+background-color:#ffffff;
+font-size:14px;
+display:inline;
+float: left;
+width: auto;
+font-family:QuicksandBook-Regular;
+}
+
+.providers2 ul {
+list-style-type: none; 
+margin: 0; 
+padding: 0;
+} 
+
+.providers2 li { 
+display:inline; 
+padding:0;
+margin: 0px;
+}
+.providers2 :link, 
+.providers2 :visited,
+.providers2 :hover {
+font-family:QuicksandBook-Regular;
+font-size:14px;
+text-decoration:none;
+padding: 5px 7px 5px 7px;
+margin-right: 20px;
+}
+
+.providers2 :link, 
+.providers2 :visited {
+color:#000000;
+background-color:#FFFFFF;
+}
+
+.providers2 :hover {
+color:#ffffff;
+background-color:#000000;
+}
+
+.providers2 #current { 
+color:#29c3d6;
+background-color:#08565e;
 }
 
 .googlemap{
+	display:inline;
+	float:right;
 }
 
 .errormsg{
@@ -63,32 +228,33 @@
 	box-shadow: inset 0 0 5px #888;
 }
 
-.mainright2{
-	position:fixed;
-	margin-top:-180px;
-	width:325px;
-	height:400px;
-	background-color: #F7FFD7;
-	border: 5px solid #000000;
-	-moz-box-shadow: inset 1px 1px 9px 1px #000000;
-	-webkit-box-shadow: inset 1px 1px 9px 1px #000000;
-	box-shadow: inset 1px 1px 9px 1px #000000;
-	/*Inner elements should not cover inner shadows*/
-	/*IE 7 AND 8 DO NOT SUPPORT INSET SHADOWS*/
-}
-
 .providers{
-	margin-top:1px;
 	background-color:#ffffff;
-	padding:10px;
-	font-size:16px;
-	color:#000000; 
-	box-shadow:0px 0px 1px #333333
+	margin-bottom:10px;
+	font-size:12px;
+	-moz-box-shadow: 1px 1px 1px 1px #A4A1A3;
+	-webkit-box-shadow: 1px 1px 1px 1px #A4A1A3;
+	box-shadow: 1px 1px 2px 0px #A4A1A3;
 }
 .providers:hover {
-    background-color: #F5F5F5;
+	-webkit-box-shadow: 1px 1px 5px 0px #7E7E7E;
+	-moz-box-shadow: 1px 1px 5px 0px #7E7E7E;
+	box-shadow: 1px 1px 5px 0px #7E7E7E;
 }
 
+.leftofprovider{
+	display:inline;
+}
+
+.linktoprovider{
+	font-family:QuicksandBook-Regular;
+	display:inline;
+	font-size:16px;
+}
+
+.providershow{
+	float:left;
+}
 .signin {
 	background-color: #ffffff;
 	position:absolute;
@@ -99,13 +265,14 @@
 	background-color: #ffffff;
 	border: 1px solid #999999;	
 }
-
 .logo{
 	display:inline;
 	float:left;
 	padding:20px;
-	font-family:enriqueta-bold;
+	font-family:QuicksandBook-Regular;;
 	font-size:46px;
+	background-color:#fff;
+	border: 5px solid #5F9FDC;	
 }
 
 .nav-hor {
@@ -130,10 +297,9 @@ margin: 0px;
 .nav-hor a:link, 
 .nav-hor a:visited,
 .nav-hor a:hover {
-font-family:opensans;
+font-family:QuicksandBook-Regular;
 font-size:14px;
 text-decoration:none;
-font-weight: bold;
 padding: 5px 7px 5px 7px;
 margin-right: 20px;
 }
@@ -154,9 +320,6 @@ color:#29c3d6;
 background-color:#08565e;
 }
 
-.topbar{
-}
-
 .timeago{
 	display:inline;
 	font-size:10px;
@@ -165,33 +328,35 @@ background-color:#08565e;
 
 .mainbody{
 	float:left;
-	height:700px;
-	background-color:#77BAE5;
-	color:#000000;
+	height:100%;
+	background-color:#F7F4F5;
 }
 
 .mainright{
-	position:fixed;
+	margin-right:20px;
+	float:right;
+	position:relative;
 	width:325px;
 	height:400px;
-	background-color: #F7FFD7;
-	border: 5px solid #000000;
-	-moz-box-shadow: inset 1px 1px 9px 1px #000000;
-	-webkit-box-shadow: inset 1px 1px 9px 1px #000000;
-	box-shadow: inset 1px 1px 9px 1px #000000;
+	background-color: #ffffff;
+	border: 4px solid #77B9E4;
+	box-shadow:0px 0px 1px #333333;
+	-moz-box-shadow: inset 1px 1px 5px 1px #000000;
+	-webkit-box-shadow: inset 1px 1px 5px 1px #000000;
+	box-shadow: inset 1px 1px 5px 1px #000000;
 	/*Inner elements should not cover inner shadows*/
 	/*IE 7 AND 8 DO NOT SUPPORT INSET SHADOWS*/
 }
 
 .footer {
+	position:relative;
 	clear:both;
 	bottom:0px;
-	position:fixed;
-	height:70px;
+	height:100%;
 	width: 100%;
 	overflow:auto;
-	background-color:#000000;
-	-moz-box-shadow:0px 0px 3px #000000;
-	-webkit-box-shadow:0px 0px 3px #000000;
-	box-shadow:0px 0px 3px #000000;
+	background-color:#F5F5F5;
+	-moz-box-shadow:inset 0px 0px 1px #000000;
+	-webkit-box-shadow:inset 0px 0px 1px #000000;
+	box-shadow:inset 0px 0px 1px #000000;
 }

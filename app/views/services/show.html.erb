@@ -1,3 +1,5 @@
+<div class="span12">
+<div class="row">
 <% @title = @service.title %>
 <div class="search">
 		<form class="well form-search">
@@ -6,56 +8,48 @@
     			<%= text_field_tag :search, params[:search], :placeholder => "City, State or Zip Code...", :style => "width:80%;"  %>
     			<%= submit_tag "Search", :name => nil %>
 		</form>
-	<% end %>
 </div>
 
-
+<% end %>	
 
 <% if !@providers.empty? %>
 <% @providers.each do |provider| %>
-<div class="span8">
+<div class="span8 offset2">	
+	<div><%= @service.title %></div>	
 <div class="providers">
-	<ol>
-	<li>
-	<b><%= link_to provider.user.name, user_path(provider.user_id) %></b><br>
-	<%= gravatar_for provider.user.email %>
-		<b><%= link_to provider.name, provider_path(provider) %></b>
-	<%= link_to '<i class="icon-thumbs-up"></i>'.html_safe, vote_provider_path(provider, type: "up"), method: "post" %>
-	<%= pluralize provider.reputation_value_for(:votes).to_i, "like" %>
-	<br><br>
-	Recent Comment: "<%=provider.comments.last.body%>" 
-	<div align="right">
-	added <%= time_ago_in_words(provider.created_at) %> ago
+	<%= gravatar_for provider.user.email%> 
+	<div class="linktoprovider">
+	<%= link_to provider.name, provider_path(provider) %>
 	</div>
-	</li>
-    </ol>
-</div>
+	
+	<div class="vote">
+	<%= pluralize provider.reputation_value_for(:votes).to_i, "recommendation" %>
+		<%= link_to '<i class="icon-thumbs-up"></i>'.html_safe, vote_provider_path(provider, type: "up"), method: "post" %>
+	</div>	
 </div>
 
+<div class="timeago">	
+<div class="right">	
+<%= link_to provider.user.name, user_path(provider.user_id) %> added this service <%= time_ago_in_words(provider.created_at) %> ago
+</div>
+	<hr>
+</div>
 
+</div>
 <% end %>
 <%= yield :scripts %>
 <% else %>
-Sorry there were no providers found near the address you specified.
-<%end%>
-
-
-<div class="span4">
-<div class="mainright2">
-	<div class="timeago">
-	<center>ServiceCrunch Dashboard</center>
-	<center>
-<% @providers.last(10).reverse.each do |provider| %>
-<b><%= link_to provider.user.name, user_path(provider.user_id) %></b> 
-added 
-<b><%= link_to provider.name, provider_path(provider) %></b> 
-(<%= time_ago_in_words(provider.service.created_at) %> ago)
-<br>
-<% end %>
-	</div>
-	</div>
+<div class="nosearch">
+<center>Sorry there are no <%= @service.title.downcase %> services near the address you specified.</center>
 </div>
+<% end %>
+</div>
+</div>
+		
+
+
 	
+
 
 
 

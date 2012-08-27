@@ -1,56 +1,128 @@
 <% @title = @provider.name %>
 <div class="span12">
-<br>
-<%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id)%>
-<br><br>
+		
+				
+				
+					<div class="providershownav2">
+						<div class="row">
+						<div class="backbutton">	
+							<%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, service_path(@provider.service_id) %>
+						</div>
+						
+						<div class="hirebutton">
+							Get quote
+						</div>	
+						</div>
+					</div>
+					
+			<div class="container">
+				<div class="providershow2">	
+							<div class="row">
 
-<h2><%= link_to '@' + @provider.user.name + "'s", user_path(@provider.user_id)%><br><%= @provider.name %></h2><br>
-<%= @provider.street %><br>
-<%= @provider.city %>,  <%= @provider.state %> <%= @provider.zip %><br>
-<%= number_to_phone(@provider.phone)  %><br>
-<%= link_to 'Company Website', @provider.website %><br>
-Insured / licensed: <%= @provider.insured %>
+					<div class="span4">
+					<div class="row">
+					<div class="providershowinfo">
+						<%= link_to @provider.user.name,user_path(@provider.user_id)%>
+						<br><br>
+				<%= gravatar_for @provider.user.email%>
+					</div>
+				 	</div>
+					</div>
+				
+					<div class="span4">
+					<div class="providershowinfoaddress">
+						<div class="providershowinfoaddressname">
+				<%= @provider.name %>
+						</div>
+				<br>
+				<%= @provider.street %>
+				<br>
+				<%= @provider.city %>,  <%= @provider.state %> <%= @provider.zip %>
+				<br>
+				<%= number_to_phone(@provider.phone)  %>
+				<br>
+				<%= link_to 'Company Website', @provider.website %>
+				<br>
+				Insured / licensed: <%= @provider.insured %><br>
+					</div>
+					</div>
+						
+					<div class="span4">	
+						<div class="providershowinfostats">
+							<div class="providershowinfostatstitle">
+								Stats
+							</div>	
+							<br>
+						
+						<%=pluralize @provider.reputation_value_for(:votes).to_i, "recommendation" %><br>
+						<%=pluralize @provider.comments.count.to_i,"review" %>
+						</div>	
+							
+					</div>
+					
+				</div>
+	  	        </div>
+			</div>
+
+
+<div class="container">
+	<div class="span6">
+	<div class="row">
+		<div class="providershowinfosummarytitle">
+			Summary of services:
+		</div>	
+		
+		<div class="providershowinfosummary">
+			Summary of services goes here ...
+
+		</div>
+	</div>	
+	</div>
+
+			
+		<div class="googlemap">
+			<%= gmaps("markers" => {"data" => @json}, "map_options" => {"zoom" => 11,"auto_adjust" => true, "auto_zoom" => false}) %>
+			<%= yield :scripts %>
+		</div>
+		
 </div>
 
-<div class="googlemap">
-<div class="row">
-<div class="span6 offset4">
-<%= gmaps("markers" => {"data" => @json}, "map_options" => {"zoom" => 11,"auto_adjust" => true, "auto_zoom" => false}) %>
-	<%= yield :scripts %>
-</div>
-</div>
-</div>
-<br>
-
+<div class="span12">
+		
 <%#--------start of comments iteration section-------------------- %>
-<% @provider.comments.reverse.each do |comment| %>
-<%= gravatar_for comment.user.email if comment.user %>
+		<% @provider.comments.reverse.each do |comment| %>
+		<%= gravatar_for comment.user.email if comment.user %>
+		<b>
+		<%= link_to comment.user.name, comment.user if comment.user %>:
+		</b>
+		<%= comment.body %>
+		<br>
 
-
-<div style="margin-left: 7em; margin-top: -4em;">
-<b><%= link_to comment.user.name, comment.user if comment.user %>:</b>
-<%= comment.body %>
-
-
-
-<div class="comment-ago">
-<div align="right">
+<div class="timeago">
+	<div class="right">
 <%= time_ago_in_words(comment.created_at) %> ago
+	</div>
 </div>
-</div>
-</div>
-<hr>
-<br><br>
 <% end %>
 
-
-
 <%#--------start of comments form section-------------------- %>
-	
-		<%= form_for ([@provider, @provider.comments.build]) do |f| %>
-	
-		<%= f.text_area :body, :placeholder => "Add a review for this service...", :rows => 5, :style => "width:100%;" %>
-		  <div align="right">
-		<%= f.button :'Add Comment', :class => 'btn' %>	
-		</div>  
-		<% end %>
+
+<div class="span11">
+	<div class="row">
+		<hr>
+		
+			<%= form_for ([@provider, @provider.comments.build]) do |f| %>
+			<%= f.text_area :body, :placeholder => "Add a review for this service...", :rows => 5, :style => "width:100%" %>
+		  		<div class="right">
+					<%= f.button :'Add Comment', :class => 'btn' %>	
+		  		</div>  
+			<% end %>
+			
+	</div>			
+</div>	
+
+</div>	
+			
+
+</div>
+		

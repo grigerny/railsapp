@@ -9,19 +9,28 @@
 	<% end %>
 </div>
 
-
-	<div class="span12">
-<% @services.each do |service| %>  
-    <p><%= link_to "#{service.title}", service %></p>
-<% end %>
-    </div>
-
-	<div class="span8">
-	<div style="font-size: 13px;">
-	  <i class="icon-bookmark	"></i> <b>Construction</b> (<%= Service.where(:category => "construction").count%>)
+<div class="span12">
+	<div class="row">
+<div class="searchresults">
+		<% @services.each do |service| %>  
+    		<p>
+			<%= link_to "#{service.title}", service %>
+			</p>
+		<% end %>
+		</div>
 	</div>
-<ol>	
-<div style="font-size: 12px;">
+</div>
+
+	
+	<div class="span10 offset1">
+		<div class="row">
+			<div class="servicesshow2">
+<div style="font-size: 13px;">
+	  <i class="icon-bookmark"></i> <b>Construction</b> (<%= Service.where(:category => "construction").count%>)
+</div>
+
+<ol>
+<div style="font-size: 13px;">
 <% Service.where(:category => "construction").each do |service| %>
 <%= link_to service.title.capitalize, service %><br>
 <% end %>
@@ -32,7 +41,7 @@
   <i class="icon-bookmark"></i> <b>Pet Services</b>
 </div>
 
-<div style="font-size: 12px;">
+<div style="font-size: 13px;">
 <% Service.where(:category => "pet").each do |service| %>
 <%= link_to service.title.capitalize, service %><br>
 <% end %>
@@ -58,28 +67,12 @@
   <i class="icon-bookmark"></i> <b>Trainers</b>
 </div>
 <br>
-<div style="font-size: 13px;">
-  <i class="icon-bookmark"></i> <b>Fixers</b>
+			</div>
+		</div>
 </div>
 
-    </div>
 
-	<div class="span4">
-	<div class="mainright">
-			<div class="timeago">
-				<center>ServiceCrunch Dashboard</center>
-				<center>
-	<% @providers.last(10).reverse.each do |provider| %>
-		<b><%= link_to provider.user.name, user_path(provider.user_id) %></b> 
-		added 
-		<b><%= link_to provider.name, provider_path(provider) %></b> 
-		(<%= time_ago_in_words(provider.service.created_at) %> ago)
-		<br>
-	<% end %>
 
 	
 
-				</center>
-			</div>
-		</div>
-	</div>
+		
